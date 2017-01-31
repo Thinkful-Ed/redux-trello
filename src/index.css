@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    padding: 10px;
+    background: #1565C0;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+h2 {
+    color: white;
+}
+
+.lists {
+    display: flex;
+}
+
+.list {
+    background-color: #E0E0E0;
+    margin: 10px;
+    padding: 8px;
+    min-width: 200px;
+    border-radius: 4px;
+}
+
+.list:first-child {
+    margin-left: 0;
+}
+
+.list:last-child {
+    margin-right: 0;
+}
+
+.card {
+    background-color: #FAFAFA;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 4px;
+}
