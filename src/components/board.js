@@ -1,28 +1,26 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import List from './list';
 import AddForm from './add-form';
 
-export default class Board extends React.Component {
+import {addList} from '../actions';
+
+
+export class Board extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            lists: []
-        };
 
         this.addList = this.addList.bind(this);
     }
 
     addList(title) {
-        this.setState({
-            lists: [...this.state.lists, {title}]
-        });
+        this.props.dispatch(addList(title));
     }
 
     render() {
-        const lists = this.state.lists.map((list, index) =>
-            <List key={index} {...list} />
+        const lists = this.props.lists.map((list, index) =>
+            <List key={index} index={index} {...list} />
         );
 
         return (
@@ -40,4 +38,10 @@ export default class Board extends React.Component {
 Board.defaultProps = {
     title: 'Board'
 };
+
+const mapStateToProps = state => ({
+    lists: state.lists
+});
+
+export default connect(mapStateToProps)(Board);
 

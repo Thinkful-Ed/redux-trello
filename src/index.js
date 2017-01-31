@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import Board from './components/board';
 import store from './store';
-import {addList, addCard} from './actions';
 import './index.css';
 
-store.dispatch(addList('Test list'));
-store.dispatch(addCard('Test card', 2));
-console.log(store.getState());
-
-
 ReactDOM.render(
-  <Board />,
+  <Provider store={store}>
+      <Board />
+  </Provider>,
   document.getElementById('root')
 );
