@@ -7,15 +7,6 @@ import AddForm from './add-form';
 import {addCard} from '../actions';
 
 export class List extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            cards: []
-        }
-
-        this.addCard = this.addCard.bind(this);
-    }
-
     addCard(text) {
         this.props.dispatch(addCard(text, this.props.index));
     }
@@ -28,7 +19,7 @@ export class List extends React.Component {
             <div className="list">
                 <h3>{this.props.title}</h3>
                 {cards}
-                <AddForm type="card" onAdd={this.addCard} />
+                <AddForm type="card" onAdd={text => this.addCard(text)} />
             </div>
         );
     }

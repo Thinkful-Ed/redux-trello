@@ -8,12 +8,6 @@ import {addList} from '../actions';
 
 
 export class Board extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.addList = this.addList.bind(this);
-    }
-
     addList(title) {
         this.props.dispatch(addList(title));
     }
@@ -28,7 +22,7 @@ export class Board extends React.Component {
                 <h2>{this.props.title}</h2>
                 <div className="lists">
                     {lists}
-                    <AddForm type="list" onAdd={this.addList} />
+                    <AddForm type="list" onAdd={title => this.addList(title)} />
                 </div>
             </div>
         );
