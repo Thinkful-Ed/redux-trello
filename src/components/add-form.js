@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './add-form.css';
+
 export default class AddForm extends React.Component {
     constructor(props) {
         super(props);

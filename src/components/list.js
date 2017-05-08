@@ -6,6 +6,8 @@ import AddForm from './add-form';
 
 import {addCard} from '../actions';
 
+import './list.css';
+
 export class List extends React.Component {
     addCard(text) {
         this.props.dispatch(addCard(text, this.props.index));

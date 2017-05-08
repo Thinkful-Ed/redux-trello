@@ -6,6 +6,7 @@ import AddForm from './add-form';
 
 import {addList} from '../actions';
 
+import './board.css';
 
 export class Board extends React.Component {
     addList(title) {
