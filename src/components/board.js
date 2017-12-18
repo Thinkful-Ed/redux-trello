@@ -15,16 +15,23 @@ export class Board extends React.Component {
 
     render() {
         const lists = this.props.lists.map((list, index) =>
-            <List key={index} index={index} {...list} />
+        <li className="list-wrapper" key={index}>
+            <List index={index} {...list} />
+        </li>
         );
 
         return (
             <div className="board">
-                <h2>{this.props.title}</h2>
-                <div className="lists">
+                <h2>Example board</h2>
+                <ul className="lists">
                     {lists}
-                    <AddForm type="list" onAdd={title => this.addList(title)} />
-                </div>
+                    <li className="add-list-wrapper">
+                        <AddForm
+                            type="list"
+                            onAdd={title => this.addList(title)}
+                        />
+                    </li>
+                </ul>
             </div>
         );
     }

@@ -6,8 +6,6 @@ import AddForm from './add-form';
 
 import {addCard} from '../actions';
 
-import './list.css';
-
 export class List extends React.Component {
     addCard(text) {
         this.props.dispatch(addCard(text, this.props.index));
@@ -15,13 +13,22 @@ export class List extends React.Component {
 
     render() {
         const cards = this.props.cards.map((card, index) =>
-            <Card key={index} {...card} />
+            <li key={index}>
+                <Card {...card} />
+            </li>
         );
         return (
-            <div className="list">
+            <div>
                 <h3>{this.props.title}</h3>
-                {cards}
-                <AddForm type="card" onAdd={text => this.addCard(text)} />
+                <ul className="list">
+                    {cards}
+                    <li>
+                        <AddForm
+                            type="card"
+                            onAdd={text => this.addCard(text)}
+                        />
+                    </li>
+                </ul>
             </div>
         );
     }
