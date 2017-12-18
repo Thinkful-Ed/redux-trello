@@ -7,16 +7,16 @@
     text-decoration: none;
 }
 
-.lists > .add-button {
+.add-list-wrapper > .add-button {
     min-width: 200px;
     background: #1565C0;
 }
 
-.lists > .add-button:hover {
+.add-list-wrapper > .add-button:hover {
     background: #0D47A1;
 }
 
-.lists > .add-button a {
+.add-list-wrapper > .add-button a {
     color: white;
 }
 
