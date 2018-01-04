@@ -14,11 +14,11 @@ export class Board extends React.Component {
     }
 
     render() {
-        const lists = this.props.lists.map((list, index) =>
-        <li className="list-wrapper" key={index}>
-            <List index={index} {...list} />
-        </li>
-        );
+        const lists = this.props.lists.map((list, index) => (
+            <li className="list-wrapper" key={index}>
+                <List index={index} {...list} />
+            </li>
+        ));
 
         return (
             <div className="board">
@@ -46,4 +46,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Board);
-
