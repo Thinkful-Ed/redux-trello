@@ -20,11 +20,11 @@
     color: white;
 }
 
-.list > .add-button:hover {
+.list .add-button:hover {
     background: #BDBDBD;
 }
 
-.list > .add-button a {
+.list .add-button a {
     color: black;
 }
 
